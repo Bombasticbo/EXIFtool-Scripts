@@ -1,5 +1,5 @@
 # EXIFtool-Scripts
-Scripts I use to automatically modify EXIF data tags of jpgs.
+Scripts I use to automatically modify EXIF data tags of jpgs, mp4, m4a, ... (formats EXIFTools can handle).
 
 Different scripts write...
 ## date from filename to EXIF datetime
@@ -15,7 +15,7 @@ Because Picasa displays under an image not the filename, but the IPTC caption.
 
 ## EXIFDate to FileDate
 Why?
-Because the file date may be changed by editing or copying via FTP, MTP etc. and it's handy to be able to sort the images by file date in a file browser or viewer
+Because the file date may be changed by editing or copying via FTP, MTP etc. and it's handy to be able to sort the images/movies by file date in a file browser or viewer
 
 ## HowTo:
 Use in Windows. (For Linux swap ' and " in the exiftool command. And the rest of the batch file, of course.)
