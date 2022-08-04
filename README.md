@@ -13,10 +13,14 @@ Because the filedate is changed when copying a backup of the WhatsApp folder bac
 Why?
 Because Picasa displays under an image not the filename, but the IPTC caption.
 
+## EXIFDate to FileDate
+Why?
+Because the file date may be changed by editing or copying via FTP, MTP etc. and it's handy to be able to sort the images by file date in a file browser or viewer
+
 ## HowTo:
 Use in Windows. (For Linux swap ' and " in the exiftool command. And the rest of the batch file, of course.)
 
-A: Drag a file or directory and drop it on the respective script in the Explorer (not in Total Commander).
+A: Drag one or more file(s) or directory and drop it on the respective script in the Explorer (not in Total Commander).
 
 Or
 
