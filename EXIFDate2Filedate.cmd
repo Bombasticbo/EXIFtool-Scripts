@@ -17,16 +17,16 @@ rem sets file date to EXIF date (can also be done by IrfanView)
 
 if ~%1 == ~ goto error
 rem parse filename for date info and use to set datetime
-rem @"c:\Program Files (x86)\GeoSetter\tools\exiftool.exe" "-alldates<$filename" %1
+rem @"%~dp0\exiftool.exe" "-alldates<$filename" %1
 rem if filename in Whatsapp format (=time unknown) set time to 9:00 to (in order avoid having the incremental numbers as minutes and being off by a day due to DST)
-rem @"c:\Program Files (x86)\GeoSetter\tools\exiftool.exe" "-alldates<${filename;$_=substr($_,0,13)} 09:00" -if "$filename =~ /^IMG-\d{8}-WA\d{4}\.*/" %1
+rem @"%~dp0\exiftool.exe" "-alldates<${filename;$_=substr($_,0,13)} 09:00" -if "$filename =~ /^IMG-\d{8}-WA\d{4}\.*/" %1
 rem set filedate
 
 rem "-charset filename=UTF8" funzt nicht bei Umlauten im Dateinamen
-@"c:\Program Files (x86)\GeoSetter\tools\exiftool.exe" "-charset filename=latin" "-filemodifydate<CreateDate" "-filecreatedate<CreateDate" !params! 
+@"%~dp0\exiftool.exe" "-charset filename=latin" "-filemodifydate<CreateDate" "-filecreatedate<CreateDate" !params! 
 
-rem echo c:\Program Files (x86)\GeoSetter\tools\exiftool.exe !params!
-rem @"c:\Program Files (x86)\GeoSetter\tools\exiftool.exe" -overwrite_original -r "-alldates<filename" !params! -execute ^
+rem echo %~dp0\exiftool.exe !params!
+rem @"%~dp0\exiftool.exe" -overwrite_original -r "-alldates<filename" !params! -execute ^
 rem  -overwrite_original  "-alldates<${filename;$_=substr($_,0,13)} 09:00" -if "$filename =~ /^IMG-\d{8}-WA\d{4}\.*/"  !params! -execute ^
 rem -r "-filemodifydate<DateTimeOriginal" "-filecreatedate<DateTimeOriginal" !params!
 
